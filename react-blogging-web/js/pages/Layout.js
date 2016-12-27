@@ -1,12 +1,12 @@
 import React from "react"
-import Body from "./Body"
+import {Link} from "react-router"
 
 export default class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
       text: "Blogging website"
-    }
+    };
     
   }
   changeText(text) {
@@ -15,8 +15,8 @@ export default class Layout extends React.Component {
   render() {
     return (
       <div>
-        <h1>Logo</h1>
-        <Body text={this.state.text} changeText={this.changeText.bind(this)}/>
+      <h1>Blog</h1>
+      {this.props.children}
       </div>      
     );
   }
