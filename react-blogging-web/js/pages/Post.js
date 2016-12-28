@@ -7,7 +7,7 @@ export default class Post extends React.Component {
       <div>
         <h1>Blog post detail</h1>
         <article>
-          <p>This is new blogpost</p>
+          <p>This is new blogpost number {this.props.params.id}</p>
         </article>
       </div>      
     );
