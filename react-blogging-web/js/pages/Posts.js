@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router"
 
 export default class Posts extends React.Component {
   
@@ -7,10 +8,11 @@ export default class Posts extends React.Component {
       <div>
         <h1>Home</h1>
         <article>
-          article1
-          article2
-          article3
-          article4
+          <h1 class="title"><Link to="post">Challenge: 20 Euler problems in 100 days</Link></h1>
+          <h1 class="title"><Link to="post">Challenge: 20 Euler problems in 100 days</Link></h1>
+          <h1 class="title"><Link to="post">Challenge: 20 Euler problems in 100 days</Link></h1>
+          <h1 class="title"><Link to="post">Challenge: 20 Euler problems in 100 days</Link></h1>
+          <h1 class="title"><Link to="post">Challenge: 20 Euler problems in 100 days</Link></h1>
         </article>
       </div>      
     );
