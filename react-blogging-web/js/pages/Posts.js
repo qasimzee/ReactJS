@@ -1,19 +1,22 @@
-import React from "react"
-import {Link} from "react-router"
+import React from "react";
+import {Link} from "react-router";
+import PostStore from "../stores/PostStore";
 
 export default class Posts extends React.Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      posts: PostStore.getAll()
+    };
+  }
   render() {
+    const {posts} = this.state;
+    const postsComponents = posts.map( (post) => {
+      return <h1 class="title"><Link to={"post/" + post.id}>{post.title}</Link></h1>
+    } );
     return (
       <div>
-        <h1>Home</h1>
-        <article>
-          <h1 class="title"><Link to="post/1">Challenge: 20 Euler problems in 100 days</Link></h1>
-          <h1 class="title"><Link to="post/2">Challenge: 20 Euler problems in 100 days</Link></h1>
-          <h1 class="title"><Link to="post/3">Challenge: 20 Euler problems in 100 days</Link></h1>
-          <h1 class="title"><Link to="post/4">Challenge: 20 Euler problems in 100 days</Link></h1>
-          <h1 class="title"><Link to="post/5">Challenge: 20 Euler problems in 100 days</Link></h1>
-        </article>
+        <article>{postsComponents}</article>
       </div>      
     );
   }
