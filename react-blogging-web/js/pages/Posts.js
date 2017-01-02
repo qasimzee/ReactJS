@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router";
 import PostStore from "../stores/PostStore";
+import * as PostActions from "../actions/PostActions";
 
 export default class Posts extends React.Component {
   constructor() {
@@ -9,6 +10,7 @@ export default class Posts extends React.Component {
       posts: PostStore.getAll()
     };
   }
+
   render() {
     const {posts} = this.state;
     const postsComponents = posts.map( (post) => {

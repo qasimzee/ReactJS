@@ -1,4 +1,5 @@
 import {EventEmitter} from "events";
+import dispatcher from "../dispatcher.js"
 
 class PostStore extends EventEmitter {
   constructor() {
@@ -24,27 +25,28 @@ class PostStore extends EventEmitter {
     this.currentpost = {
       title: "",
       body: ""
-    }
-  }
+    };
 
+  }
+  
   getAll () {
     return this.posts;
   }
 
-  getPost(id) {
-     $.ajax({
-        url: 'http://www.qasimzeeshan.com/wp-json/wp/v2/posts/' + id,
-        dataType: "json",
-        success: function (data) {
-          this.currentpost = 
-        },
-        error: function (xhr, status, err) {
-            console.error(status, err.toString());
-        }
-    });
+  
+
+  handleActions(actions) {
+    switch (actions.type) {
+      case "RECEIVE_POST": {
+        this.currentpost = actions.post;
+        this.emit("change");
+      }
+    }
   }
 }
 
 const postStore = new PostStore;
+
+dispatcher.register(postStore.handleActions.bind(postStore));
 
 export default postStore;
