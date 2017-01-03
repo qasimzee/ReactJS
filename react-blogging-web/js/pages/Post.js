@@ -7,31 +7,19 @@ export default class Post extends React.Component {
   constructor() {
     super();
     this.state = {
-      post: {
-        title: "",
-        contnet: ""
-      },
+      post: PostStore.getCurrentPost(),
     };
   }
-  // componentDidMount: function() {
-  //   var _this = this;
-  //   PostActions.loadPost(this.props.params.id);
-  // },
-
-  componentDidMount() {
-    var _this = this;
-    this.serverRequest = 
-      axios
-        .get('http://www.qasimzeeshan.com/wp-json/wp/v2/posts/' + this.props.params.id)
-        .then(function(result) {    
-          _this.setState({
-            post: {
-              title: result.data.title.rendered,
-              content: result.data.content.rendered
-            }
-          });
-        })
+  componentWillMount() {
+    PostActions.loadPost(this.props.params.id);
+    PostStore.on("change", () => {
+      this.setState({
+        post: PostStore.getCurrentPost(),  
+      });
+    });
+    
   }
+  
   render() {
     const {post} = this.state;
     return (

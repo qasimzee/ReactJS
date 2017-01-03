@@ -29,16 +29,19 @@ class PostStore extends EventEmitter {
 
   }
   
-  getAll () {
-    return this.posts;
+  getCurrentPost() {
+    return this.currentpost;
   }
 
-  
+  getAll() {
+    return this.posts;
+  }
 
   handleActions(actions) {
     switch (actions.type) {
       case "RECEIVE_POST": {
-        this.currentpost = actions.post;
+        this.currentpost.title = actions.post.data.title.rendered;
+        this.currentpost.content = actions.post.data.content.rendered;
         this.emit("change");
       }
     }
