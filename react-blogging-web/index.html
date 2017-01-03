@@ -32,28 +32,35 @@
   
     <nav role="navigation" class="site-navigation main-navigation">
       <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="menu"><li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-13"><a title="Home" href="http://www.qasimzeeshan.com">Home</a></li>
-<li id="menu-item-130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130"><a href="http://www.qasimzeeshan.com/projects/">Projects</a></li>
-<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a title="Who is this guy?" href="http://www.qasimzeeshan.com/about/">About</a></li>
-<li id="menu-item-199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199"><a title="LinkedIn" href="https://www.linkedin.com/in/qzeeshan">LinkedIn</a></li>
-<li id="menu-item-200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-200"><a title="Twitter" href="https://twitter.com/qasimzee">Twitter</a></li>
-<li id="menu-item-238" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-238"><a href="http://github.com/qasimzee">Github</a></li>
-</ul></div>   </nav><!-- .site-navigation .main-navigation -->
-    
-    <div class="clear"></div>
-  </div><!--/container -->
-    
-</header><!-- #masthead .site-header -->
-<!-- React JS app container -->
-<div class="container" id=app>
-</div>
-
-
-<footer class="site-footer" role="contentinfo">
-  <div class="site-info container">
+  <li id="menu-item-130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130"><a href="http://www.qasimzeeshan.com/projects/">Projects</a></li>
+  <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a title="Who is this guy?" href="http://www.qasimzeeshan.com/about/">About</a></li>
+  <li id="menu-item-199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199"><a title="LinkedIn" href="https://www.linkedin.com/in/qzeeshan">LinkedIn</a></li>
+  <li id="menu-item-200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-200"><a title="Twitter" href="https://twitter.com/qasimzee">Twitter</a></li>
+  <li id="menu-item-238" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-238"><a href="http://github.com/qasimzee">Github</a></li>
+  </ul></div>   </nav><!-- .site-navigation .main-navigation -->
       
-    <a href="http://qasimzeeshan.com" rel="developer">&copy; Qasim Zeeshan</a>
-  </div><!-- .site-info -->
-</footer><!-- #colophon .site-footer -->
-<script src="js/client.min.js" ></script>
+      <div class="clear"></div>
+    </div><!--/container -->
+      
+  </header><!-- #masthead .site-header -->
+  <!-- React JS app container -->
+  <div class="container" id=app>
+  </div>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-info container">
+        
+      <a href="http://qasimzeeshan.com" rel="developer">&copy; Qasim Zeeshan</a>
+    </div><!-- .site-info -->
+  </footer><!-- #colophon .site-footer -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+  <script src="js/client.min.js" ></script>
 </body>
 </html>
