@@ -13,20 +13,24 @@ export default class Post extends React.Component {
   componentWillMount() {
     PostActions.loadPost(this.props.params.id);
     PostStore.on("change", () => {
-      this.setState({
-        post: PostStore.getCurrentPost(),  
-      });
+      var current_post = PostStore.getCurrentPost();
+      if (current_post) {
+        this.setState({
+          post: current_post,
+        });  
+      }
+      
     });
     
   }
-  
+
   render() {
     const {post} = this.state;
     return (
       <div>
-        <h1>{post.title}</h1>
+        <h1 dangerouslySetInnerHTML={{__html: post.title}}></h1>
         <article>
-          <p>{post.content}</p>
+          <p dangerouslySetInnerHTML={{__html: post.content}}></p>
         </article>
       </div>      
     );
