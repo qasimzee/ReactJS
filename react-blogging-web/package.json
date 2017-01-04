@@ -16,6 +16,9 @@
     "babel-preset-stage-0": "^6.3.13",
     "flux": "^2.1.1",
     "history": "^1.17.0",
+    "koa": "^1.2.4",
+    "koa-convert": "^1.2.0",
+    "koa-static": "^2.0.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-router": "^3.0.0",
@@ -26,7 +29,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --inline --hot"
+    "dev": "webpack-dev-server --inline --hot",
+    "start": "NODE_ENV=production webpack --progress && NODE_ENV=production node server.js",
+    "build": "webpack --progress --watch"
   },
   "author": "",
   "license": "ISC"
