@@ -16,14 +16,15 @@
     "babel-preset-stage-0": "^6.3.13",
     "flux": "^2.1.1",
     "history": "^1.17.0",
+    "koa": "^1.2.4",
+    "koa-convert": "^1.2.0",
+    "koa-static": "^2.0.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-router": "^3.0.0",
     "sw-precache": "^4.2.3",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.16.2",
-    "browserify": "^13.1.0",
-    "literalify": "^0.4.0"
+    "webpack-dev-server": "^1.16.2"
   },
   "devDependencies": {},
   "scripts": {
